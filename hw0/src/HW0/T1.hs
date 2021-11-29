@@ -18,14 +18,14 @@ assocPair :: (a, (b, c)) <-> ((a, b), c)
 assocPair = Iso (\(a, (b, c)) -> ((a, b), c)) (\((a, b), c) -> (a, (b, c)))
 
 assocEither :: Either a (Either b c) <-> Either (Either a b) c
-assocEither = Iso firstFunc secondFunc
+assocEither = Iso one two
   where
-    firstFunc :: Either a (Either b c) -> Either (Either a b) c
-    firstFunc (Left a)          = Left $ Left a
-    firstFunc (Right (Left b))  = Left $ Right b
-    firstFunc (Right (Right c)) = Right c
-    secondFunc :: Either (Either a b) c -> Either a (Either b c)
-    secondFunc (Left (Left a)) = Left a
-    secondFunc (Left (Right b))  = Right $ Left b
-    secondFunc (Right c) = Right $ Right c
+    one :: Either a (Either b c) -> Either (Either a b) c
+    one (Left a)          = Left $ Left a
+    one (Right (Left b))  = Left $ Right b
+    one (Right (Right c)) = Right c
+    two :: Either (Either a b) c -> Either a (Either b c)
+    two (Left (Left a))   = Left a
+    two (Left (Right b))  = Right $ Left b
+    two (Right c)         = Right $ Right c
 
