@@ -8,8 +8,7 @@ nz func x = x
 
 ns :: Nat a -> Nat a
 -- ((a -> a) -> a -> a) -> (a -> a) -> a -> a
--- simplified for: ns nat func x = nat func x
-ns nat func x = nat func (func x)
+ns nat func x = func $ nat func x
 
 nplus, nmult :: Nat a -> Nat a -> Nat a
 -- ((a -> a) -> a -> a) -> ((a -> a) -> a -> a) -> (a -> a) -> a -> a
