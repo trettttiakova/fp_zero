@@ -7,7 +7,6 @@ import GHC.Natural
 repeat' :: a -> [a]
 repeat' x = fix (x:)        
 
-
 -- map' :: (a -> b) -> [a] -> [b]  -- behaves like Data.List.map
 
 -- computes the n-th Fibonacci number
