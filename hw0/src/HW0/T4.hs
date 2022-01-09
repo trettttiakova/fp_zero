@@ -1,13 +1,21 @@
-module HW0.T4 where
+module HW0.T4
+  ( fac
+  , fib
+  , map'
+  , repeat'
+  )
+  where
 
 import Data.Function
 import GHC.Natural
 
 -- behaves like Data.List.repeat
 repeat' :: a -> [a]
-repeat' x = fix (x:)        
+repeat' x = fix (x:)
 
--- map' :: (a -> b) -> [a] -> [b]  -- behaves like Data.List.map
+-- behaves like Data.List.map
+map' :: (a -> b) -> [a] -> [b]
+map' = fix (\rec func ar -> if null ar then [] else func (head ar) : rec func (tail ar))
 
 -- computes the n-th Fibonacci number
 fib :: Natural -> Natural

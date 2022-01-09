@@ -1,6 +1,13 @@
 {-# LANGUAGE TypeOperators #-}
 
-module HW0.T1 where
+module HW0.T1 
+  ( assocEither
+  , assocPair
+  , distrib
+  , flipIso
+  , runIso
+  )
+  where
 
 data a <-> b = Iso (a -> b) (b -> a)
 

@@ -1,4 +1,14 @@
-module HW0.T5 where
+module HW0.T5
+  ( Nat
+  , ns
+  , nz
+  , nplus
+  , nmult
+  , nFromNatural
+  , nToNum
+  )
+  where
+
 import GHC.Natural (Natural)
 
 type Nat a = (a -> a) -> a -> a

@@ -1,4 +1,12 @@
-module HW0.T3 where
+module HW0.T3
+  ( compose
+  , contract
+  , permute
+  , i
+  , k
+  , s
+  )
+  where
 
 s :: (a -> b -> c) -> (a -> b) -> (a -> c)
 s f g x = f x (g x)

@@ -1,4 +1,13 @@
-module HW0.T6 where
+module HW0.T6 
+  ( a
+  , a_whnf
+  , b
+  , b_whnf
+  , c
+  , c_whnf
+  )
+  where
+
 import HW0.T1 (distrib)
 import Data.Char (isSpace)
 
